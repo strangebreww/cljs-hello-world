@@ -1,14 +1,18 @@
-{:deps
-  {org.clojure/clojurescript {:mvn/version "1.10.741"}}
+{:paths
+ ["src" "target" "resources"]
 
-  :aliases
-  {:dev
-   {:main-opts ["--main" "cljs.main"
-                "--watch" "src"
-                "--compile" "app"
-                "--repl"]}
-   :socket
-   {:jvm-opts ["-Dclojure.server.browser={:port,4444,:accept,cljs.server.browser/repl}"]
-    :main-opts ["--main" "cljs.main"
-                "--watch" "src"
-                "--compile" "app"]}}}
+ :deps
+ {org.clojure/clojurescript {:mvn/version "1.10.764"}
+  com.bhauman/figwheel-main {:mvn/version "0.2.5"}}
+
+ :aliases
+ {:dev
+  {:main-opts ["--main" "figwheel.main"
+               "--build" "dev"
+               "--repl"]}
+  :socket
+  {:jvm-opts  ["-Dclojure.server.browser={:port,4444,:accept,cljs.server.browser/repl}"]
+   :main-opts ["--main" "cljs.main"
+               "--watch" "src"
+               "--compile" "hello-world.app"]}}}
+
