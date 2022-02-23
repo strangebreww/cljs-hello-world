@@ -2,8 +2,8 @@
  ["src" "target" "resources"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.773"}
-  com.bhauman/figwheel-main {:mvn/version "0.2.11"}
+ {org.clojure/clojurescript {:mvn/version "1.10.844"}
+  com.bhauman/figwheel-main {:mvn/version "0.2.13"}
   reagent/reagent           {:mvn/version "0.10.0"
                              :exclusions [cljsjs/react cljsjs/react-dom]}}
 
