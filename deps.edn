@@ -3,7 +3,7 @@
 
  :deps
  {org.clojure/clojurescript {:mvn/version "1.10.764"}
-  com.bhauman/figwheel-main {:mvn/version "0.2.5"}}
+  com.bhauman/figwheel-main {:mvn/version "0.2.9"}}
 
  :aliases
  {:dev
@@ -15,4 +15,3 @@
    :main-opts ["--main" "cljs.main"
                "--watch" "src"
                "--compile" "hello-world.app"]}}}
-
