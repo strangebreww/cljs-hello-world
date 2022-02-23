@@ -1,24 +1,17 @@
 (ns ^:figwheel-hooks hello-world.app
   (:require [axios]
-            [react]
-            [react-dom]))
+            [reagent.dom :as dom]))
 
-(def e react/createElement)
+(defn app
+      []
+      [:h1 "Hello, there, yo"])
 
-(def hello-world (e "h1" nil "Hello, world"))
+(defn render-app
+      []
+      (dom/render [app] (js/document.getElementById "hello_world_container")))
 
-(def dom-container (.. js/document (querySelector "#hello_world_container")))
+(defn ^:after-load re-render
+  []
+  (render-app))
 
-(react-dom/render hello-world dom-container)
-
-;(-> (.. axios (get "https://jsonplaceholder.typicode.com/todos/1"))
-;    (.then #(js/console.log %)))
-;
-;(defn ^:after-load re-render []
-;  (js/console.log "Hello, World... again"))
-;
-;(js/console.log "Hello, World!")
-
-;(def elements (.. js/document (getElementsByTagName "p")))
-
-;(js/console.log elements)
+(defonce init-app (do (render-app) true))
